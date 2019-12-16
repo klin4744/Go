@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestTwoSum(t *testing.T) {
 	type test struct {
@@ -29,5 +32,16 @@ func TestTwoSum(t *testing.T) {
 		if twoSum(test.numbers, test.target) != test.answer {
 			t.Error("Expected", test.answer, "got", twoSum(test.numbers, test.target))
 		}
+	}
+}
+func ExampleTwoSum() {
+	fmt.Println(twoSum([]int{1, 2, 3, 4, 5, 6}, 7))
+	// Output:
+	// true
+}
+
+func BenchmarkTwoSum(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		twoSum([]int{1, 2, 3, 4, 5, 6}, 7)
 	}
 }
