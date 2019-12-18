@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Kevin's Stock Price</title>
+   </head>
+   <body>
+      <h1>Kevin's Stock Price</h1>
+      {{range .}}
+      <p>Date: {{.Date}} High: {{.High}} Low: {{.Low}}</p>
+      {{ end }}
+   </body>
+</html>
