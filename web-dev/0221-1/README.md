@@ -7,3 +7,10 @@ Use HandleFunc to add the following routes to the default ServeMux:
 Add a func for each of the routes.
 
 Have the "/me/" route print out your name.
+
+
+// PART 2
+
+Take the previous program in the previous folder and change it so that:
+a template is parsed and served
+you pass data into the template

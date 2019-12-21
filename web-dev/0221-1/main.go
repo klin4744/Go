@@ -2,11 +2,17 @@ package main
 
 import (
 	"fmt"
+	"html/template"
+	"log"
 	"net/http"
 )
 
 func home(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprint(w, "<h1>Welcome Home</h1>")
+	tpl := template.Must(template.ParseGlob("templates/*.gohtml"))
+	err := tpl.ExecuteTemplate(w, "home.gohtml", "Kevin")
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
 func dog(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprint(w, "Dog Route")
