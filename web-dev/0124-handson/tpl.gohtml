@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Restaurants</title>
+   </head>
+   <body>
+      <h1>Restaurants</h1>
+      {{range .}}
+      <h3>{{.Name}}</h3>
+      {{.Breakfast.Type}} <br />
+      {{ range.Breakfast.Dishes }}
+      <ul>
+         <li>
+            {{.}}
+         </li>
+      </ul>
+      {{ end }}
+      {{.Lunch.Type}} <br />
+      {{ range.Lunch.Dishes }}
+      <ul>
+         <li>
+            {{.}}
+         </li>
+      </ul>
+
+      {{ end }}
+      {{.Dinner.Type}} <br />
+      {{ range.Dinner.Dishes }}
+      <ul>
+         <li>
+            {{.}}
+         </li>
+      </ul>
+
+      {{ end }}
+
+      {{ end }}
+   </body>
+</html>
